@@ -18,17 +18,19 @@ The macro goal was to fight climate change with data science. The specific goal 
 #### Data Exploration
 
 ##### Heatmap of missing values: 
-- to visually see what covariates were missing values	
+- Visually see what covariates were missing values	
 - 4 features for wind and fog had significant amounts of missing values (> 50%)
 - For other 2 features with missing values -> dropped rows, tried imputing with mean
 - Future: try coming up with formula or predicting the values (prediction on prediction)
+- 
 ##### Year built distribution plot
 - Kdeplot and rugplot
 - Saw year had year 0 values -> drop, treat as missing values
-##### Correlation matrix heatmap: 
-- to look at correlation between covariates and the target value (mine)
-- Noticed site eui has positive correlation with energy star rating and weak direct correlations with all the other numerical features
 - 
+##### Correlation matrix heatmap: 
+- Look at correlation between covariates and the target value (mine)
+- Noticed site eui has positive correlation with energy star rating and weak direct correlations with all the other numerical features
+
 #### Data Cleaning and Preprocessing
 - Dropped features with significant amount of missing values (more than 50%): max_wind_speed, direction_peak_wind_speed,direction_max_wind_speed, days_with_fog, etc. 
 - Dropped rows where year built was 0
@@ -45,27 +47,23 @@ The macro goal was to fight climate change with data science. The specific goal 
 ##### Principal component heatmap
 - See variance explained by each feature for all the components (see what and how much the features contributed to each principal component)
 - A mathematical reduction of the feature space, no real life meaning, ie. mapping 3D to 2D
-- hen site eui was dropped the variance explained by all the features increased for all the components
+- When site eui was dropped the variance explained by all the features increased for all the components
+- 
 ##### Domain knowledge
-- reduce number of features
+- Reduce number of features
 - Temp covariates: min, max, avg temp for months, avg temp for a year, days below and above given temps, heating and cooling days
 - Decided to drop some temp covariates and 2 facility types that did not contribute variance to any of the principal components
 - Reasoning: Average doesn’t capture the distribution of temperatures, no precise temp fluctuations, for building energy consumption changes (don’t need avg for each month)
 - Heating and cooling days: useful since heating generally takes more energy than cooling, and the dataset have more heating days than cooling days
-- Days below and days above specific temps capture the frequency of the temps that require heating and cooling. Gives a better picture of how much heating and cooling was required. (duration of temp, with the significant variability range captured) (don’t need min and max for each month)
-Decided to drop min, max, avg temp, and 2 facility types that did not contribute variance to any of the principal components: mixed_use_predominantly_residential and facility_type_multifamily_uncategorized
+- Days below and days above specific temps capture the frequency of the temps that require heating and cooling. Gives a better picture of how much heating and cooling was required. (Duration of temp, with the significant variability range captured, don’t need min and max for each month)
+- Decided to drop min, max, avg temp, and 2 facility types that did not contribute variance to any of the principal components: mixed_use_predominantly_residential and facility_type_multifamily_uncategorized
 
 #### Modeling
 - Predicting a continuous value
-- Baseline model
-- Linear regression
 - Metrics: accuracy, R^2, MSE, RMSE, MAE
-- Accuracy on test 0.53
-- Improving models
-- Lasso & gradient boosting
-- 0.51 and 0.66
-- Random forest regressor & support vector regressor model
-- 0.72 and 0.41
+- Baseline model: Linear regression -- Accuracy on test 0.53
+- Improving models: Lasso & gradient boosting -- 0.51 and 0.66
+- Random forest regressor & support vector regressor model -- 0.72 and 0.41
 - Future models: principal component features with sequential deep learning model, multi-models script
 
 ### Future Improvements
