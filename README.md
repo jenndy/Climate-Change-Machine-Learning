@@ -56,23 +56,19 @@ The macro goal was to fight climate change with data science. The specific goal 
 Decided to drop min, max, avg temp, and 2 facility types that did not contribute variance to any of the principal components: mixed_use_predominantly_residential and facility_type_multifamily_uncategorized
 
 #### Modeling
-Predicting a continuous value
-Baseline model
-Linear regression
-Metrics: accuracy, R^2, MSE, RMSE, MAE
-Accuracy on test 0.53
-Improving models
-Lasso & gradient boosting
-0.51 and 0.66
-Random forest regressor & support vector regressor model
-0.72 and 0.41
-Future models: principal component features with sequential deep learning model, multi-models script
-Preparing Test Set
-We were given a test csv with no target column, we predict and submit this column to be compared with the target values they withheld
-Had to change the way data was processed to fit the test csv data and model accuracy was decreased
-Do not think new test set should affect the way data was processed too much since we do not know what other configurations of data there would be
-The categorical variables had different types in the training csv and the test csv so dummying them gave different numbers of columns
-Can concatenate the datasets to process together to ensure uniformity and use a flag for the ones that have no target values
-Can also add the missing columns to the test csv dataframe
-May not be a hassle or issue if grouped into less columns with clusters
-The model was run on the test csv after it was processed by dropping all the categorical features (same for train csv), result was that predicted column length was less than the ids column -> not sure why??
+- Predicting a continuous value
+- Baseline model
+- Linear regression
+- Metrics: accuracy, R^2, MSE, RMSE, MAE
+- Accuracy on test 0.53
+- Improving models
+- Lasso & gradient boosting
+- 0.51 and 0.66
+- Random forest regressor & support vector regressor model
+- 0.72 and 0.41
+- Future models: principal component features with sequential deep learning model, multi-models script
+
+### Future Improvements
+- Look more into impute, calculate, predict missing values 
+- Cluster the dummy variables to not have sparse matrix 
+- Do more reading on different models
