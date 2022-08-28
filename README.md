@@ -22,11 +22,11 @@ The macro goal was to fight climate change with data science. The specific goal 
 - 4 features for wind and fog had significant amounts of missing values (> 50%)
 - For other 2 features with missing values -> dropped rows, tried imputing with mean
 - Future: try coming up with formula or predicting the values (prediction on prediction)
-- 
+
 ##### Year built distribution plot
 - Kdeplot and rugplot
 - Saw year had year 0 values -> drop, treat as missing values
-- 
+
 ##### Correlation matrix heatmap: 
 - Look at correlation between covariates and the target value (mine)
 - Noticed site eui has positive correlation with energy star rating and weak direct correlations with all the other numerical features
@@ -48,7 +48,7 @@ The macro goal was to fight climate change with data science. The specific goal 
 - See variance explained by each feature for all the components (see what and how much the features contributed to each principal component)
 - A mathematical reduction of the feature space, no real life meaning, ie. mapping 3D to 2D
 - When site eui was dropped the variance explained by all the features increased for all the components
-- 
+
 ##### Domain knowledge
 - Reduce number of features
 - Temp covariates: min, max, avg temp for months, avg temp for a year, days below and above given temps, heating and cooling days
