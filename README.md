@@ -32,7 +32,7 @@ The macro goal was to fight climate change with data science. The specific goal 
 - Noticed site eui has positive correlation with energy star rating and weak direct correlations with all the other numerical features
 
 #### Data Cleaning and Preprocessing
-- Dropped features with significant amount of missing values (more than 50%): max_wind_speed, direction_peak_wind_speed,direction_max_wind_speed, days_with_fog, etc. 
+- Dropped features with significant amount of missing values (more than 50%): max_wind_speed, direction_peak_wind_speed, direction_max_wind_speed, days_with_fog, etc. 
 - Dropped rows where year built was 0
 - Dropped rows where year built was missing
 - Imputed missing values for energy star rating with the mean
