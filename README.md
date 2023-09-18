@@ -34,8 +34,9 @@ The macro goal was to fight climate change with data science. The specific goal 
 #### Data Cleaning and Preprocessing
 - Dropped features with significant amount of missing values (more than 50%): max_wind_speed, direction_peak_wind_speed,direction_max_wind_speed, days_with_fog, etc. 
 - Dropped rows where year built was 0
-- Dropped rows where year built and energy star rating were missing
-- Future: try to impute missing values with mean, formula, or prediction - trade offs require more analysis
+- Dropped rows where year built was missing
+- Imputed missng values for energy star rating
+- Future: try to impute missing values with mean for all samples belonging to the same class, use a formula, or prediction - trade offs: assumptions and requires more analysis
 - Wind speed does affect temperature of object due to thermodynamics from physics perspective but could not keep column since too few data in collection 
 - Used one hot encoding for 4 categorical features (dummy variables)
 - Facility type had 41 types of values
