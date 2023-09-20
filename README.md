@@ -41,7 +41,7 @@ The macro goal was to fight climate change with data science. The specific goal 
 - Used one hot encoding for 4 categorical features (dummy variables)
 - Facility type had 41 types of values
 - Didn’t want to label encode since numeric encoding wouldn't make sense as numbers distance-wise (magnitudes and order would be weighted) 
-- Future: make groupings by using clustering first, then use one hot encoding on the groupings (fewer unique types -> resulting matrix won’t be as sparse)
+- Future: make groupings by using k-modes clustering first, then use one hot encoding on the groupings (fewer unique types -> resulting matrix won’t be as sparse)
 
 #### Feature Engineering
 
